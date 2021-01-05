@@ -1,0 +1,153 @@
+:root {
+  --primary-color-dark-blue-1: hsl(217, 28%, 15%);
+  --primary-color-dark-blue-2: hsl(218, 28%, 13%);
+  --primary-color-dark-blue-3: hsl(216, 53%, 9%);
+  --primary-color-dark-blue-4: hsl(219, 30%, 18%);
+  --accent-color-cyan: hsl(176, 68%, 64%);
+  --accent-color-blue: hsl(198, 60%, 50%);
+  --neutral-color-white: hsl(0, 0%, 100%);
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --padding-sm: 2.5rem 2rem;
+  --padding-md: 3.5rem 3rem;
+  --padding-lg: 4.5rem 4rem;
+  --padding-footer: 15rem 4rem 1rem;
+  --padding-footer-tablet: 20rem 3rem 1rem;
+  --padding-footer-mobile: 25rem 3rem 1rem;
+}
+
+body {
+  background-color: var(--primary-color-dark-blue-2);
+  color: var(--neutral-color-white);
+  font-family: var(--font-body);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 0.5rem 0;
+}
+
+section {
+  padding: var(--padding-lg);
+}
+
+.contact-info {
+  margin-top: 50px;
+  padding: var(--padding-footer);
+  display: grid;
+  background-color: var(--primary-color-dark-blue-3);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "logo logo logo logo" "location contacts links social" "attribution attribution attribution attribution";
+}
+
+.contact-info > div,
+.contact-info > nav {
+  padding: 1rem 0.5rem;
+}
+
+.contact-info-logo {
+  grid-area: logo;
+}
+
+.contact-info-location {
+  grid-area: location;
+}
+
+.contact-info-contacts-item,
+.contact-info-location-item {
+  display: flex;
+}
+
+footer p {
+  padding: 0;
+}
+
+.img-footer {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  width: 18px;
+  height: 18px;
+  line-height: 1.5;
+}
+
+.contact-info-contacts {
+  grid-area: contacts;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info-contacts-item:first-child {
+  margin-bottom: -0.5rem;
+}
+
+.contact-info-links {
+  grid-area: links;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.contact-info-links-list:first-child {
+  margin-right: 2.5rem;
+}
+
+.contact-info-links-list li {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info-social-links {
+  display: flex;
+  justify-content: flex-end;
+  grid-area: social;
+}
+
+.contact-info-social-link-item {
+  margin-left: 1rem;
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--neutral-color-white);
+  border-radius: 50%;
+}
+
+@media (max-width: 375px) {
+  section {
+    padding: var(--padding-sm);
+  }
+
+  footer {
+    padding-top: 60px;
+  }
+  .contact-info {
+    padding: var(--padding-footer-mobile);
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact-info {
+    padding: var(--padding-footer-tablet);
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: "logo" "location" "contacts" "links" "social" " attribution";
+  }
+  .contact-info > div,
+  .contact-info > nav {
+    padding: 1rem 0;
+  }
+  .contact-info-contacts {
+    align-items: flex-start;
+  }
+  .contact-info-links {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .contact-info-links-list:first-child {
+    margin-bottom: 1rem;
+  }
+  .contact-info-social-links {
+    justify-content: center;
+  }
+}
